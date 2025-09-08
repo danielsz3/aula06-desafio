@@ -133,7 +133,7 @@ section {
 
 /* Seção Hero */
 .hero {
-    background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://www.alfaumuarama.edu.br/fau/site/templates/assets/images/slides/slide-2.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://www.alfaumuarama.edu.br/downloads/banner/1748867957_1.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -451,4 +451,17 @@ section {
     .section-title {
         font-size: 2rem;
     }
+}
+
+.testemunhos, .diferenciais {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.testemunhos .curso-card, .diferenciais .curso-card {
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
