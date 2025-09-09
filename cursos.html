@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Entre em contato com a Faculdade UniAlfa para informações sobre cursos, matrículas e serviços.">
+    <title>Faculdade UniAlfa - Cursos Disponíveis</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar" aria-label="Menu principal">
+            <a href="index.html" class="logo" aria-label="Página inicial">
+                <img src="https://www.alfaumuarama.edu.br/fau/images/logop.png" alt="Logo da Faculdade UniAlfa">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                <li class="nav-item"><a href="cursos.html" class="nav-link">Cursos</a></li>
+                <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre a gente</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Abrir menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-content" aria-label="Cursos disponíveis">
+            <h1 class="hero-title">Nossos Cursos</h1>
+            <p class="hero-subtitle">Conheça a variedade de cursos de graduação e pós-graduação que a UniAlfa oferece.
+            </p>
+
+            <div class="cursos-grid">
+                <div class="curso-card">
+                    <img src="https://encurtador.com.br/2imUu" alt="Curso de Administração">
+                    <h3>Administração</h3>
+                    <p>Forma profissionais com visão estratégica e habilidades de gestão para atuar em diversas áreas.
+                    </p>
+                    <ul>
+                        <li>Duração: 4 anos</li>
+                        <li>Modalidade: Presencial/EAD</li>
+                    </ul>
+                    <button class="btn btn-secondary saiba-mais" data-curso="admin">Saiba Mais</button>
+                </div>
+
+                <div class="curso-card">
+                    <img src="https://encurtador.com.br/C1AwW" alt="Curso de Engenharia de Software">
+                    <h3>Engenharia de Software</h3>
+                    <p>Capacita para desenvolver, projetar e gerenciar sistemas de software complexos.</p>
+                    <ul>
+                        <li>Duração: 5 anos</li>
+                        <li>Modalidade: Presencial</li>
+                    </ul>
+                    <button class="btn btn-secondary saiba-mais" data-curso="software">Saiba Mais</button>
+                </div>
+
+                <div class="curso-card">
+                    <img src="https://encurtador.com.br/cZfsE" alt="Curso de Ciência de Dados">
+                    <h3>Ciência de Dados</h3>
+                    <p>Prepara para analisar e interpretar grandes volumes de dados, transformando-os em insights.</p>
+                    <ul>
+                        <li>Duração: 4 anos</li>
+                        <li>Modalidade: EAD</li>
+                    </ul>
+                    <button class="btn btn-secondary saiba-mais" data-curso="dados">Saiba Mais</button>
+                </div>
+
+                <div class="curso-card">
+                    <img src="https://encurtador.com.br/HgjOl" alt="Curso de Marketing Digital">
+                    <h3>Marketing Digital</h3>
+                    <p>Desenvolve competências para criar e gerenciar estratégias de marketing no ambiente online.</p>
+                    <ul>
+                        <li>Duração: 2 anos (Tecnólogo)</li>
+                        <li>Modalidade: Presencial/EAD</li>
+                    </ul>
+                    <button class="btn btn-secondary saiba-mais" data-curso="marketing">Saiba Mais</button>
+                </div>
+
+                <div class="curso-card">
+                    <img src="https://encurtador.com.br/Jlx0G" alt="Pós-graduação em Gestão de Projetos">
+                    <h3>Pós-graduação em Gestão de Projetos</h3>
+                    <p>Especialização para liderar e gerenciar projetos com metodologias ágeis e tradicionais.</p>
+                    <ul>
+                        <li>Duração: 18 meses</li>
+                        <li>Modalidade: EAD</li>
+                    </ul>
+                    <button class="btn btn-secondary saiba-mais" data-curso="projetos">Saiba Mais</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-text"></p>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+        <p>&copy; 2025 Faculdade UniAlfa. Todos os direitos reservados.</p>
+        <div class="social-icons">
+            <a href="https://github.com/danielsz3"><i class="fab fa-github"></i>Daniel Oliveira</a>
+            <a href="https://github.com/flpgustavo"><i class="fab fa-github"></i>Felipe Gustavo</a>
+            <a href="https://github.com/JoaoGabryel"><i class="fab fa-github"></i>João Gabryel</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const modal = document.getElementById("modal");
+        const modalTitle = document.getElementById("modal-title");
+        const modalText = document.getElementById("modal-text");
+        const closeBtn = document.querySelector(".close");
+
+        document.querySelectorAll(".saiba-mais").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const curso = btn.dataset.curso;
+
+                if (curso === "admin") {
+                    modalTitle.textContent = "Administração";
+                    modalText.textContent = "Mais detalhes sobre o curso de Administração...";
+                } else if (curso === "software") {
+                    modalTitle.textContent = "Engenharia de Software";
+                    modalText.textContent = "Mais detalhes sobre Engenharia de Software...";
+                } else if (curso === "dados") {
+                    modalTitle.textContent = "Ciência de Dados";
+                    modalText.textContent = "Mais detalhes sobre Ciência de Dados...";
+                } else if (curso === "marketing") {
+                    modalTitle.textContent = "Marketing Digital";
+                    modalText.textContent = "Mais detalhes sobre Marketing Digital...";
+                } else if (curso === "projetos") {
+                    modalTitle.textContent = "Gestão de Projetos";
+                    modalText.textContent = "Mais detalhes sobre Gestão de Projetos...";
+                }
+
+                modal.style.display = "flex";
+            });
+        });
+
+        closeBtn.onclick = () => modal.style.display = "none";
+        window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+
+    </script>
+</body>
+
+</html>
